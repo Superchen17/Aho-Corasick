@@ -64,8 +64,8 @@ class Trie:
         self.lookupTable[self.counter] = newNode 
         self.counter += 1
 
-      else: #* else update existing path
-        currNode.isEnd = True if (i == len(word) - 1) else False
+      elif i == len(word) - 1: #* else update existing path on last letter
+          currNode.nexts[letter].isEnd = True
 
       currNode = currNode.nexts[letter]
   
